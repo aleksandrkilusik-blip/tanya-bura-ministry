@@ -18,8 +18,9 @@
     .partner { background:var(--warm); text-align:center; } .partner .content { max-width:820px; margin:auto; } .partner h2 { font-size:clamp(46px,6vw,74px); } .partner .verse { font:italic 22px/1.45 Georgia,serif; margin:28px auto 10px; max-width:710px; } .partner small { display:block; text-transform:uppercase; font-weight:800; letter-spacing:.11em; margin-bottom:34px; } .link-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; } .button.outline { background:transparent; border:1px solid var(--ink); }
     .letters { background:#fff; } .letters .wrap { display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; } .letters p { max-width:650px; font-size:19px; margin:0; } .letters .button { white-space:nowrap; }
     footer { background:#102b21; color:#e8efe9; padding:46px 0; } footer .wrap { display:flex; justify-content:space-between; gap:20px; align-items:end; } footer p { margin:8px 0 0; font-size:14px; color:#b9ccc1; } footer a { color:white; }
-    @media (max-width:760px) { nav ul { display:none; } .hero { min-height:670px; } .hero:before { background:linear-gradient(0deg,rgba(10,28,21,.88) 0%,rgba(10,28,21,.1) 75%),url('portrait.jpg') 65% 15%/cover; } .two-col,.war-grid,.letters .wrap { grid-template-columns:1fr; gap:36px; } .two-col .portrait { min-height:360px; order:-1; } .cards,.tiles { grid-template-columns:1fr; } .side-tiles { grid-template-columns:1fr 1fr; } section { padding:70px 0; } .war .copy { padding:70px 20px; } .war img { min-height:290px; } footer .wrap { display:block; } }
+    @media (max-width:760px) { nav ul { display:flex; } nav li:not(:last-child) { display:none; } .hero { min-height:670px; } .hero:before { background:linear-gradient(0deg,rgba(10,28,21,.88) 0%,rgba(10,28,21,.1) 75%),url('portrait.jpg') 65% 15%/cover; } .two-col,.war-grid,.letters .wrap { grid-template-columns:1fr; gap:36px; } .two-col .portrait { min-height:360px; order:-1; } .cards,.tiles { grid-template-columns:1fr; } .side-tiles { grid-template-columns:1fr 1fr; } section { padding:70px 0; } .war .copy { padding:70px 20px; } .war img { min-height:290px; } footer .wrap { display:block; } }
   </style>
+<link rel="stylesheet" href="letters.css">
 </head>
 <body>
   <nav><div class="wrap"><a class="brand" href="#top">Tanya Bura</a><ul><li><a href="#story">MY STORY</a></li><li><a href="#ministry">MINISTRY</a></li><li><a href="#partnership">PARTNERSHIP</a></li><li><a href="#newsletters">PRAYER LETTERS</a></li><li><a id="lang-toggle" href="?lang=uk">UA</a></li></ul></div></nav>
@@ -35,20 +36,19 @@
     <section class="war"><div class="war-grid"><img src="children.jpg" alt="Children taking part in a ministry activity"><div class="copy"><div class="eyebrow">A changing mission</div><h2>The war changed us — and our mission changed too.</h2><p>Alongside student ministry, Ukraine for Christ offers spiritual, intellectual, and social support for children and teenagers. Mobile libraries help make safe spaces for learning, imagination, and hope available where they are needed.</p></div></div></section>
 
     <section class="partner" id="partnership"><div class="wrap content"><div class="eyebrow">A team effort</div><h2>Will you help reach Ukraine for Christ?</h2><p class="verse">“Ask the Lord of the harvest, therefore, to send out workers into his harvest field.”</p><small>Matthew 9:37–38</small><p class="lead">This work happens through a team of faithful prayer and financial partners. Your gift helps make it possible to bring the Gospel, practical care, and enduring hope to young people in Ukraine.</p><div class="link-row"><a class="button" href="https://give.cru.org/0894319" target="_blank" rel="noopener">Support Tanya’s ministry <span aria-hidden="true">→</span></a><a class="button outline" href="https://sites.google.com/view/tb-student-ministry" target="_blank" rel="noopener">Visit ministry website</a></div></div></section>
-    <section class="letters" id="newsletters"><div class="wrap"><div><div class="eyebrow">Stay connected</div><h2>Prayer letters</h2><p>Read Tanya’s ministry updates, stories, and prayer needs — and join her in prayer for students, children, and communities across Ukraine.</p></div><a class="button" href="https://us5.campaign-archive.com/home/?u=853ba6e6e47c22d7cbb9c45d5&amp;id=cca7c930b8" target="_blank" rel="noopener">Open prayer letters <span aria-hidden="true">→</span></a></div></section>
+    <section class="letters" id="newsletters"><div class="wrap" id="letters-content"></div></section>
   </main>
   <footer><div class="wrap"><div><strong>Tanya Bura</strong><p>Student Ministry in Ukraine · Ukraine for Christ</p></div><p>Campus Crusade for Christ International</p></div></footer>
   <script>
     (() => {
       if (new URLSearchParams(location.search).get('lang') !== 'uk') return;
       document.documentElement.lang = 'uk';
-<script>(()=>{const u=document.documentElement.lang==="uk",n=document.querySelector("nav ul"),m=document.querySelector("main"),s=document.createElement("section"),c=document.createElement("style");c.textContent=".letters{background:#fff}.letters .wrap{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}.letters p{max-width:650px;font-size:19px;margin:0}.letters .button{white-space:nowrap}@media(max-width:760px){.letters .wrap{grid-template-columns:1fr;gap:36px}}";document.head.append(c);n.insertAdjacentHTML("beforeend",`<li><a href="#newsletters">${u?"МОЛИТОВНІ ЛИСТИ":"PRAYER LETTERS"}</a></li>`);s.className="letters";s.id="newsletters";s.innerHTML=`<div class="wrap"><div><div class="eyebrow">${u?"БУДЬМО НА ЗВ’ЯЗКУ":"STAY CONNECTED"}</div><h2>${u?"Молитовні листи":"Prayer letters"}</h2><p>${u?"Читайте оновлення служіння Тані, історії та молитовні потреби — і моліться разом із нею за студентів, дітей та громади по всій Україні.":"Read Tanya’s ministry updates, stories, and prayer needs — and join her in prayer for students, children, and communities across Ukraine."}</p></div><a class="button" href="https://us5.campaign-archive.com/home/?u=853ba6e6e47c22d7cbb9c45d5&amp;id=cca7c930b8" target="_blank" rel="noopener">${u?"Відкрити молитовні листи":"Open prayer letters"} <span aria-hidden="true">→</span></a></div>`;m.append(s)})()</script>
       document.title = 'Таня Бура | Студентське служіння в Україні';
       document.querySelector('meta[name="description"]').content = 'Підтримайте служіння Тані Бури серед студентів в Україні.';
       document.getElementById('lang-toggle').textContent = 'EN';
-      document.getElementById('lang-toggle').href = location.pathname;
+      document.getElementById('lang-toggle').href = location.pathname + '?lang=en' + location.hash;
       const t = new Map([
-        ['MY STORY','МІЙ ШЛЯХ'], ['MINISTRY','СЛУЖІННЯ'], ['PARTNERSHIP','ПАРТНЕРСТВО'], ['PRAYER LETTERS','МОЛИТОВНІ ЛИСТИ'],
+        ['My story','МІЙ ШЛЯХ'], ['Tanya Bura','Таня Бура'], ['Ukraine for Christ · Campus Crusade for Christ','УКРАЇНА ДЛЯ ХРИСТА · CAMPUS CRUSADE FOR CHRIST'], ['My story','МІЙ ШЛЯХ'], ['Tanya Bura','Таня Бура'], ['Ukraine for Christ · Campus Crusade for Christ','УКРАЇНА ДЛЯ ХРИСТА · CAMPUS CRUSADE FOR CHRIST'], ['MY STORY','МІЙ ШЛЯХ'], ['MINISTRY','СЛУЖІННЯ'], ['PARTNERSHIP','ПАРТНЕРСТВО'], ['PRAYER LETTERS','МОЛИТОВНІ ЛИСТИ'],
         ['UKRAINE FOR CHRIST · CAMPUS CRUSADE FOR CHRIST','УКРАЇНА ДЛЯ ХРИСТА · CAMPUS CRUSADE FOR CHRIST'],
         ['Hope for the next generation of Ukraine.','Надія для нового покоління України.'],
         ['I serve students, children, and young people with the good news of Christ — building relationships, strengthening faith, and helping communities endure.','Я служу студентам, дітям і молоді, несучи Добру Новину Христа — будую стосунки, зміцнюю віру та допомагаю громадам вистояти.'],
@@ -82,5 +82,6 @@
       document.querySelectorAll('img[alt="Children taking part in a ministry activity"]').forEach(img => img.alt = 'Діти беруть участь у служінні');
     })();
   </script>
+<script src="letters.js"></script>
 </body>
 </html>
